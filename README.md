@@ -44,10 +44,12 @@ mvn spring-boot:run
 ## Como acessar o banco de dados em memória?
  Após a subida do código, acesse: http://localhost:8080/h2-console
 ### Configurações do banco
+```properties
 Driver Class: org.h2.Driver
 JDBC URL: jdbc:h2:mem:pagamentos
 User Name: sa
 Password: (vazio)
+```
 ```markdown
 O banco é recriado a cada inicialização da aplicação.
 ```

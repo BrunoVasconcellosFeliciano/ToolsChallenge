@@ -63,6 +63,7 @@ Exemplo de request:
         }
     }
 }
+```
 
 ### Cancelar Transação
 PATCH /api/transacao/{id}/cancelamento

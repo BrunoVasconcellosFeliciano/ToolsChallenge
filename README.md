@@ -79,7 +79,7 @@ Exemplo de request:
 ```
 
 ### Cancelar Transação
-PATCH /api/transacao/{id}/cancelamento
+PATCH /api/transacao/{id}/cancelamento<br>
 Exemplo: /api/transacao/4911561891215698189/cancelamento
 
 ### Consultar Transação Estornada/Cancelada

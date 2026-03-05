@@ -47,6 +47,7 @@ mvn spring-boot:run
 POST /api/transacao/pagamento
 
 Exemplo de request:
+```json
 {
     "transacao": {
         "cartao": "5283********8624",

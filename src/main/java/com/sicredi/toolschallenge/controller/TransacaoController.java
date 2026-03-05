@@ -28,7 +28,7 @@ public class TransacaoController {
             @Valid @RequestBody TransacaoRequestWrapperDTO wrapper) {
 
 
-        TransacaoResponseDTO response = transacaoService.criarPagamento(wrapper.getTransacao());
+        TransacaoResponseDTO response = transacaoService.criarTransacao(wrapper.getTransacao());
 
         TransacaoResponseWrapperDTO wrapperResponse = new TransacaoResponseWrapperDTO(response);
 
@@ -38,7 +38,7 @@ public class TransacaoController {
     }
 
     @PatchMapping("/{id}/cancelamento")
-    public ResponseEntity<TransacaoResponseWrapperDTO> cancelar(@PathVariable String id) {
+    public ResponseEntity<TransacaoResponseWrapperDTO> realizarCancelamento(@PathVariable String id) {
 
         TransacaoResponseDTO response = transacaoService.cancelarTransacao(id);
 
@@ -46,28 +46,28 @@ public class TransacaoController {
     }
 
     @GetMapping("/consulta/estorno")
-    public ResponseEntity<TransacaoResponseWrapperDTO> consultaEstorno(
+    public ResponseEntity<TransacaoResponseWrapperDTO> consultarEstorno(
             @RequestParam String id){
 
-        TransacaoResponseDTO response = transacaoService.consultaTransacaoCancelada(id);
+        TransacaoResponseDTO response = transacaoService.consultarTransacaoCancelada(id);
 
         return ResponseEntity.ok(new TransacaoResponseWrapperDTO(response));
     }
 
     @GetMapping("/consulta/transacao")
-    public ResponseEntity<TransacaoResponseWrapperDTO> consultaTransacaoPorId(
+    public ResponseEntity<TransacaoResponseWrapperDTO> consultarTransacaoPorId(
             @RequestParam String id){
 
-        TransacaoResponseDTO response = transacaoService.consultaTransacaoporId(id);
+        TransacaoResponseDTO response = transacaoService.consultarTransacaoPorId(id);
 
         return ResponseEntity.ok(new TransacaoResponseWrapperDTO(response));
     }
 
     @GetMapping("/consulta/todos")
-    public ResponseEntity<TransacaoListResponseWrapperDTO> consultaTodasTransacoes() {
+    public ResponseEntity<TransacaoListResponseWrapperDTO> consultarTodasTransacoes() {
 
         List<TransacaoResponseDTO> lista =
-                transacaoService.consultaTodasTransacoes();
+                transacaoService.consultarTodasTransacoes();
 
         return ResponseEntity.ok(
                 new TransacaoListResponseWrapperDTO(lista)

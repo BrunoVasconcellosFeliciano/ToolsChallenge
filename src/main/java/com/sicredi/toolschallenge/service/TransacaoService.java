@@ -16,7 +16,7 @@ import com.sicredi.toolschallenge.repository.TransacaoRepository;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
+
 
 
 @RequiredArgsConstructor
@@ -26,7 +26,7 @@ public class TransacaoService {
     private final TransacaoRepository transacaoRepository;
     private final AutorizadorFakeService autorizador;
 
-    public TransacaoResponseDTO criarPagamento(TransacaoRequestDTO request){
+    public TransacaoResponseDTO criarTransacao(TransacaoRequestDTO request){
 
         validarTransacaoPagamento(request.getDescricao().getValor(), request.getFormaPagamento().getParcelas(), request.getId());
 
@@ -102,7 +102,7 @@ public class TransacaoService {
 
     }
 
-    public TransacaoResponseDTO consultaTransacaoCancelada(String id){
+    public TransacaoResponseDTO consultarTransacaoCancelada(String id){
 
         Transacao transacao = transacaoRepository.findById(id)
                 .orElseThrow(() ->
@@ -135,7 +135,7 @@ public class TransacaoService {
 
     }
 
-    public TransacaoResponseDTO consultaTransacaoporId(String id){
+    public TransacaoResponseDTO consultarTransacaoPorId(String id){
 
         Transacao transacao = transacaoRepository.findById(id)
                 .orElseThrow(() ->
@@ -164,7 +164,7 @@ public class TransacaoService {
 
     }
 
-    public List<TransacaoResponseDTO> consultaTodasTransacoes(){
+    public List<TransacaoResponseDTO> consultarTodasTransacoes(){
 
         List<Transacao> todasTransacoes = transacaoRepository.findAll();
 

@@ -49,7 +49,7 @@ public class TransacaoServiceTest {
         when(autorizador.autorizar(any())).thenReturn(StatusTransacao.AUTORIZADO);
 
         TransacaoResponseDTO response =
-                transacaoService.criarPagamento(req);
+                transacaoService.criarTransacao(req);
 
         assertEquals(StatusTransacao.AUTORIZADO, response.getDescricao().getStatus());
 
@@ -62,7 +62,7 @@ public class TransacaoServiceTest {
 
         ServicoException e = assertThrows(
                 ServicoException.class,
-                () -> transacaoService.criarPagamento(req)
+                () -> transacaoService.criarTransacao(req)
         );
 
         assertEquals("Valor deve ser maior que zero!", e.getMessage());
@@ -75,7 +75,7 @@ public class TransacaoServiceTest {
 
         ServicoException e = assertThrows(
                 ServicoException.class,
-                () -> transacaoService.criarPagamento(req)
+                () -> transacaoService.criarTransacao(req)
         );
 
         assertEquals(HttpStatus.BAD_REQUEST, e.getStatus());
@@ -114,7 +114,7 @@ public class TransacaoServiceTest {
 
         ServicoException e = assertThrows(
                 ServicoException.class,
-                () -> transacaoService.criarPagamento(req)
+                () -> transacaoService.criarTransacao(req)
         );
 
         assertEquals("Parcela deve ser maior que zero!", e.getMessage());
@@ -129,7 +129,7 @@ public class TransacaoServiceTest {
                 .thenReturn(List.of(t));
 
         List<TransacaoResponseDTO> lista =
-                transacaoService.consultaTodasTransacoes();
+                transacaoService.consultarTodasTransacoes();
 
         assertEquals(1, lista.size());
     }

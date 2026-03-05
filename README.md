@@ -92,7 +92,7 @@ GET /api/transacao/consulta/transacao?id=4911561891215698189
 /api/transacao/consulta/todos
 
 ## Regra de Negócio
- - O valor da transaçõa deve ser maior que zero.
+ - O valor da transação deve ser maior que zero.
  - A quantidade de parcelas deve ser maior que zero.
  - Não é permitido cadastrar transações com ID duplicado.
  - Transações podem ser canceladas.

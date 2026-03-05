@@ -89,7 +89,7 @@ GET /api/transacao/consulta/estorno?id=4911561891215698189
 GET /api/transacao/consulta/transacao?id=4911561891215698189
 
 ### Listar todas as transações
-<strong>GET<strong> /api/transacao/consulta/todos
+<strong>GET</strong> /api/transacao/consulta/todos
 
 ## Regra de Negócio
  - O valor da transação deve ser maior que zero.

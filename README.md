@@ -57,7 +57,7 @@ O banco é recriado a cada inicialização da aplicação.
 ## Endpoints
 
 ### Criar pagamento
-POST /api/transacao/pagamento
+<strong>POST</strong> /api/transacao/pagamento
 
 Exemplo de request:
 ```json
@@ -79,14 +79,14 @@ Exemplo de request:
 ```
 
 ### Cancelar Transação
-PATCH /api/transacao/{id}/cancelamento<br>
+<strong>PATCH</strong> /api/transacao/{id}/cancelamento<br>
 Exemplo: /api/transacao/4911561891215698189/cancelamento
 
 ### Consultar Transação Estornada/Cancelada
-GET /api/transacao/consulta/estorno?id=4911561891215698189
+<strong>GET</strong> /api/transacao/consulta/estorno?id=4911561891215698189
 
 ### Consultar Transação por ID
-GET /api/transacao/consulta/transacao?id=4911561891215698189
+<strong>GET</strong> /api/transacao/consulta/transacao?id=4911561891215698189
 
 ### Listar todas as transações
 <strong>GET</strong> /api/transacao/consulta/todos
